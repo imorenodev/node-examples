@@ -5,10 +5,14 @@ var port = 3000;
 var app = express();
 var bodyParser = require('body-parser');
 var dishRouter = require('./dishRouter');
+var promoRouter = require('./promoRouter');
+var leaderRouter = require('./leaderRouter');
 
 app.use(morgan('dev'));
 
 app.use('/dishes', dishRouter);
+app.use('/promotions', promoRouter);
+app.use('/leadership', leaderRouter);
 
 app.use(express.static(__dirname + '/public'));
 
